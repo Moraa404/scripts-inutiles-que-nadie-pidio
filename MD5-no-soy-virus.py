@@ -50,6 +50,6 @@ def main():
             print("Bye!!\n")
             break
         else:
-            print("empty")
+            print("Unknow\n")
         
 main()
