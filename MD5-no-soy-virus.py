@@ -36,17 +36,6 @@ def Dcrypt():
             print("Error: Password not found in wordlist!\n")
             return False
 
-def UrOK():
-    n = random.randint(1,3)
-    if n == 1:
-        print("Error: The fucking fucker has fucking fucked up\n")
-    elif n == 2:
-        print("Error: YOU fucking dickhead try again\n")
-    elif n == 3:
-        print("Error... Asshole there are only 3 options, 1, 2, 3 is it that difficult?\n")
-    else:
-        print("\n\nEaster Egg: Hentai Kyaa\n\n")
-
 def main():
     while True:
         print("1) Word 2 Hash")
@@ -58,10 +47,9 @@ def main():
         elif o == "2":
             Dcrypt()
         elif o == "3":
-            print("Bye pussyfart!!\n")
+            print("Bye!!\n")
             break
         else:
-            UrOK()
-
-if __name__ == '__main__':
-    main()
+            print("empty")
+        
+main()
