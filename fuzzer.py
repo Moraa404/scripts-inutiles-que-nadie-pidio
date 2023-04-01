@@ -14,28 +14,6 @@ def print_warning(v):
 def print_error(v):
     print("\033[1;31m[-]" + "\033[0m", v)
 
-def print_banner():
-    print('\033[1;32m' + r'''
-  Sec Park, System Moraa Interface IV
-  Version 1.2.16, Alpha S
-  Ready...
-  > access Moraa404
-  access: PERMISSION DENIED.
-  > access Moraa404 grid
-  access: PERMISSION DENIED.
-  > access main Moraa404 grid
-  access: PERMISSION DENIED....and...''' + '\033[1;31m' + r'''
-  YOU DIDN'T SAY THE MAGIC WORD!
-  YOU DIDN'T SAY THE MAGIC WORD!
-  YOU DIDN'T SAY THE MAGIC WORD!
-  YOU DIDN'T SAY THE MAGIC WORD!
-  YOU DIDN'T SAY THE MAGIC WORD!
-  YOU DIDN'T SAY THE MAGIC WORD!
-  YOU DIDN'T SAY THE MAGIC WORD!
-''' + '\033[0m')
-
-print_banner()
-
 hp = argparse.ArgumentParser(description='Fuziing Tool by moraa404')
 hp.add_argument('-u', '--url', type=str, help='URL 2 Test')
 hp.add_argument('-w', '--wordlist', type=str, help='Wordlist to use')
