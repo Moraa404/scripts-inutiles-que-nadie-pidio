@@ -65,15 +65,19 @@ def fuzz(path):
 
         if response.status_code == 200:
             print_success(full_url)
+            found_urls =+ 1
         elif response.status_code == 401:
-            print_warning(full_url + 'requires authentication')
+            print_warning(full_url + '\033[1;31mrequires authentication' + '\033[0m')
+            found_urls =+ 1
         elif response.status_code == 403:
-            print_warning(full_url + 'is forbidden')
+            print_warning(full_url + '\033[1;33mis forbidden' + '\033[0m')
+            found_urls =+ 1
     except requests.exceptions.RequestException as e:
         pass
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor:
-        results = list(tqdm(executor.map(fuzz, wordlist), total=len(wordlist), desc="progress"))
+with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor: 
+       #results = list(tqdm(executor.map(fuzz, wordlist), total=len(wordlist), desc="progress"))
+        results = list(executor.map(fuzz, wordlist), total=len(wordlist), desc="progress")
 
 if found_urls:
     with open('results.txt', 'w') as file:
