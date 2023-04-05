@@ -67,10 +67,10 @@ def fuzz(path):
             print_success(full_url)
             found_urls =+ 1
         elif response.status_code == 401:
-            print_warning(full_url + '\033[1;31mrequires authentication' + '\033[0m')
+            print_warning(full_url + '\033[1;31m requires authentication' + '\033[0m')
             found_urls =+ 1
         elif response.status_code == 403:
-            print_warning(full_url + '\033[1;33mis forbidden' + '\033[0m')
+            print_warning(full_url + '\033[1;33m is forbidden' + '\033[0m')
             found_urls =+ 1
     except requests.exceptions.RequestException as e:
         pass
