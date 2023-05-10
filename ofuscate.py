@@ -30,7 +30,7 @@ def val_args(args):
         raise ValueError("-v -f -c not found")
     
 if __name__ == "__main__":
-    hp = argparse.ArgumentParser(desc="script que no tiene un uso aparente y no sirve para nada en un entorno real mas que joder al creador que esta programando esto :D")
+    hp = argparse.ArgumentParser(desc="script que no tiene un uso aparente y no sirve para nada en un entorno real mas que joder al creador que esta programando esto :D")#moraa404
     hp.add_argument("-a", "--input", help="Archovo de Entrada")
     hp.add_argument("-o", "--output", help="Archivo de Salida")
     hp.add_argument("-l", "--level", type=int, default=0, help="Nivel de ofuscacion ( 1 = vars / 2 = vars + func / 3 = vars + func + class )")
