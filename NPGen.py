@@ -2,7 +2,7 @@ import argparse
 import random
 import string
 
-def generate_password(length, pattern):
+def genpass(length, pattern):
     password = []
     for char in pattern:
         if char == '@':
@@ -18,7 +18,7 @@ def generate_password(length, pattern):
 
     return ''.join(password)
 
-def save_password_to_file(password, filename):
+def savepass(password, filename):
     if filename:
         with open(filename, "w") as file:
             file.write(password)
@@ -44,7 +44,7 @@ def main():
     passwords = []
     for _ in range(args.count):
         if args.pattern:
-            password = generate_password(args.length, args.pattern)
+            password = genpass(args.length, args.pattern)
         else:
             password = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=args.length))
         passwords.append(password)
@@ -52,7 +52,7 @@ def main():
     for password in passwords:
         print("---")
         print(f"Password generated: {password}")
-        save_password_to_file(password, args.output)
+        savepass(password, args.output)
         print("---")
 
 if __name__ == "__main__":
